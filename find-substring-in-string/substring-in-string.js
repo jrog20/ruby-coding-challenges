@@ -9,7 +9,7 @@ function detectSubstring(str, subStr) {
       // if match, compare next character of subStr with next of string
       if (str[i] == subStr[j]) {
         j++;
-              if (j == subStr.length) {
+        if (j == subStr.length) {
             return i - (subStr.length - 1);
         }
       } else {
