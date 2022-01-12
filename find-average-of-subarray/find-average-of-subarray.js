@@ -4,22 +4,22 @@
 // 5-element subarray of the given array and divide the sum by ‘5’ to find the average. 
 
 function findAveragesOfSubarrays(arr, k) {
-    const result = [];
-    for (let i = 0; i < arr.length - k + 1; i++) {
-      // find sum of next 'k' elements
-      sum = 0.0;
-      for (let j = i; j < i + k; j++) {
-        sum += arr[j];
-      }
-      result.push(sum / k); // calculate average
+  const result = [];
+  for (let i = 0; i < arr.length - k + 1; i++) {
+    // find sum of next 'k' elements
+    sum = 0.0;
+    for (let j = i; j < i + k; j++) {
+      sum += arr[j];
     }
-  
-    return result;
+    result.push(sum / k); // calculate average
   }
-  
-  const result = findAveragesOfSubarrays([1, 3, 2, 6, -1, 4, 1, 8, 2], 5);
-  console.log("Expect averages of subarrays of size k: 2.2,2.8,2.4,3.6,2.8");
-  console.log(`Averages of subarrays of size k: ${result}`);
+
+  return result;
+}
+
+const result = findAveragesOfSubarrays([1, 3, 2, 6, -1, 4, 1, 8, 2], 5);
+console.log("Expect averages of subarrays of size k: 2.2,2.8,2.4,3.6,2.8");
+console.log(`Averages of subarrays of size k: ${result}`);
 
 // Sliding Window approach:
 // The efficient way to solve this problem would be to visualize each subarray as a 
@@ -31,22 +31,22 @@ function findAveragesOfSubarrays(arr, k) {
 // reduce from O(n*k) to O(n).
 
 function findAveragesOfSubarrays(arr, k) {
-    const result = [];
-    let windowSum = 0.0,
-      windowStart = 0;
-    for (let windowEnd = 0; windowEnd < arr.length; windowEnd++) {
-      windowSum += arr[windowEnd]; // add the next element
-      // slide the window, we don't need to slide if we've not hit the required window size of 'k'
-      if (windowEnd >= k - 1) {
-        result.push(windowSum / k); // calculate the average
-        windowSum -= arr[windowStart]; // subtract the element going out
-        windowStart += 1; // slide the window ahead
-      }
+  const result = [];
+  let windowSum = 0.0,
+    windowStart = 0;
+  for (let windowEnd = 0; windowEnd < arr.length; windowEnd++) {
+    windowSum += arr[windowEnd]; // add the next element
+    // slide the window, we don't need to slide if we've not hit the required window size of 'k'
+    if (windowEnd >= k - 1) {
+      result.push(windowSum / k); // calculate the average
+      windowSum -= arr[windowStart]; // subtract the element going out
+      windowStart += 1; // slide the window ahead
     }
-  
-    return result;
   }
+
+  return result;
+}
   
-  const result = findAveragesOfSubarrays([1, 3, 2, 6, -1, 4, 1, 8, 2], 5);
-  console.log("Expect averages of subarrays of size k: 2.2,2.8,2.4,3.6,2.8");
-  console.log(`Averages of subarrays of size k: ${result}`);
+const result = findAveragesOfSubarrays([1, 3, 2, 6, -1, 4, 1, 8, 2], 5);
+console.log("Expect averages of subarrays of size k: 2.2,2.8,2.4,3.6,2.8");
+console.log(`Averages of subarrays of size k: ${result}`);
