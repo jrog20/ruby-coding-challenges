@@ -3,23 +3,23 @@
 // Brute force solution - If k = 5, this function will calculate the sum of every 
 // 5-element subarray of the given array and divide the sum by ‘5’ to find the average. 
 
-function findAveragesOfSubarrays(arr, k) {
-  const result = [];
-  for (let i = 0; i < arr.length - k + 1; i++) {
-    // find sum of next 'k' elements
-    sum = 0.0;
-    for (let j = i; j < i + k; j++) {
-      sum += arr[j];
-    }
-    result.push(sum / k); // calculate average
-  }
+// function findAveragesOfSubarrays(arr, k) {
+//   const result = [];
+//   for (let i = 0; i < arr.length - k + 1; i++) {
+//     // find sum of next 'k' elements
+//     sum = 0.0;
+//     for (let j = i; j < i + k; j++) {
+//       sum += arr[j];
+//     }
+//     result.push(sum / k); // calculate average
+//   }
 
-  return result;
-}
+//   return result;
+// }
 
-const result = findAveragesOfSubarrays([1, 3, 2, 6, -1, 4, 1, 8, 2], 5);
-console.log("Expect averages of subarrays of size k: 2.2,2.8,2.4,3.6,2.8");
-console.log(`Averages of subarrays of size k: ${result}`);
+// const result = findAveragesOfSubarrays([1, 3, 2, 6, -1, 4, 1, 8, 2], 5);
+// console.log("Expect averages of subarrays of size k: 2.2,2.8,2.4,3.6,2.8");
+// console.log(`Averages of subarrays of size k: ${result}`);
 
 // Sliding Window approach:
 // The efficient way to solve this problem would be to visualize each subarray as a 
