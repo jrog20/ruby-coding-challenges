@@ -6,7 +6,7 @@
 # The brute force solution is to compare each element with every other number, 
 # but that's a time complexity of O(n^2).
 
-# The Two Pointer technique makes the time complexity of this solution O(n) and space complexity O(1)
+# The Two Pointer technique makes the time complexity of this solution O(n) and space complexity is O(1)
 
 def two_sum(arr, target)
     # initialize two pointers - one at each end of the array
@@ -19,7 +19,7 @@ def two_sum(arr, target)
         # check to see if thes sum of the two pointer values equals the target
         sum = arr[pointer_one] + arr[pointer_two]
         if sum == target
-            return True
+            return "True"
         # if sum is less than target, move the left pointer one to the right
         elsif sum < target
             pointer_one += 1
@@ -30,7 +30,7 @@ def two_sum(arr, target)
         end
     end
     # if finish iterating through the array and we haven't found a match, return false.
-    return False
+    return "False"
 end
 
 if __FILE__ == $PROGRAM_NAME
