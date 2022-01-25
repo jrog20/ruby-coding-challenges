@@ -46,16 +46,18 @@
 # Time Complexity: O(n)
 # Space Complexity: O(1)
 
-# NOT WORKING YET!!!
 def find_duplicate(nums)
     
     # Find the intersection point of the two runners.
     tortoise = nums[0]
     hare = nums[0]
     
-    while tortoise != hare
+    while true
         tortoise = nums[tortoise]
         hare = nums[nums[hare]]
+        if tortoise == hare
+            break
+        end
     end
     
     # Find the "entrance" to the cycle.
