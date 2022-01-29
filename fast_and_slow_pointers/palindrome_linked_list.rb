@@ -24,15 +24,8 @@ def is_palindrome(head)
         current_node = current_node.next
     end
     
-    # reverse the vals array
-    reversed_vals = []
-    
-    vals.each do |val|
-        reversed_vals.unshift(val)
-    end
-    
-    # return true if the two arrays are equal to each other, otherwise false
-    return vals == reversed_vals
+    # return true if the array is equal to the reversed array
+    return vals == vals.reverse
 end
 
 if __FILE__ == $PROGRAM_NAME
