@@ -22,5 +22,25 @@
 # Output: []
 
 def interval_intersection(first_list, second_list)
+    answer = []
+    i = 0
+    j = 0
     
+    while i < first_list.length and j < second_list.length
+        # Check if first_list[i] intersects second_list[j].
+        # lo - the startpoint of the intersection
+        # hi - the endpoint of the intersection
+        lo = [first_list[i][0], second_list[j][0]].max
+        hi = [first_list[i][1], second_list[j][1]].min
+        if lo <= hi
+            answer.append([lo, hi])
+        end
+        # Remove the interval with the smallest endpoint
+        if first_list[i][1] < second_list[j][1]
+            i += 1
+        else
+            j += 1
+        end
+    end
+    answer
 end
