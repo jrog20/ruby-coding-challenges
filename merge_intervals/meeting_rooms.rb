@@ -13,12 +13,15 @@
 # Output: true
 ###############################################################################################
 # We want to return true if there are no intervals that overlap
-# 
-
-
 ###############################################################################################
 def can_attend_meetings(intervals)
-    
+    intervals.sort
+    intervals.each do |interval|
+        if interval[1] > interval[0]
+            return false
+        end
+        return true
+    end
 end
 
 if __FILE__ == $PROGRAM_NAME
