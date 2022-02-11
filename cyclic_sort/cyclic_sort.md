@@ -20,3 +20,6 @@ Problems featuring cyclic sort pattern:
 
 - Find the Missing Number (easy)
 - Find the Smallest Missing Positive Number (medium)
+
+# https://dev.to/mwong068/cycle-sort-in-ruby-5eda
+# https://www.youtube.com/watch?v=0eFq2YSueeA&t=872s
