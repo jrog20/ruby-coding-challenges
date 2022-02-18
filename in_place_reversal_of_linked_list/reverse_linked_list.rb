@@ -33,18 +33,26 @@ end
     # Since a node does not have reference to its previous node, we need to first store its previous element. 
     # We also need another pointer to store the next node before changing the reference. 
     # Finally, return the new head reference.
-    # Edge cases = 
 
     # Time complexity : O(n)
     # Space complexity : O(1)
 ######################################################################################################
 
+# Input: head = [1,2,3,4,5]
+# Output: [5,4,3,2,1]
+
 def reverse_list(head)
+    # Initialize two pointers - previous as nil and current as head
     prev = nil
     curr = head
+    # iterate through the linked list
     while curr != nil
+        # Before changing next of current, store next node
         next_temp = curr.next
+        # Change next of current, store next node
+        # this is where the actual reversing happens
         curr.next = prev
+        # Move previous and current one step forward
         prev = curr
         curr = next_temp
     end
@@ -52,14 +60,12 @@ def reverse_list(head)
 end
 
 ######################################################################################################
-# Recursive approach
 
 
-######################################################################################################
 
 if __FILE__ == $PROGRAM_NAME
     head = ListNode.new(1, ListNode.new(2, ListNode.new(3, ListNode.new(4, ListNode.new(5)))))
-    puts "Expecting [5, 4, 3, 2, 1]"
-    puts reverse_list(head)
+    puts "Expecting head to equal 5"
+    puts reverse_list(head).val
 end
 
